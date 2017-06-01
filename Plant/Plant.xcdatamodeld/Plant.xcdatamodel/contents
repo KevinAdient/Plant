@@ -76,7 +76,17 @@
         <attribute name="viewMapGeo" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="parentCompany" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="CompanyEntity" syncable="YES"/>
         <relationship name="plantAddress" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="AddressEntity" syncable="YES"/>
+        <relationship name="products" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ProductEntity" inverseName="plant" inverseEntity="ProductEntity" syncable="YES"/>
         <relationship name="resourceCategory" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="ResourceCategoryEntity" syncable="YES"/>
+    </entity>
+    <entity name="ProductEntity" representedClassName="ProductEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="customerGroup" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="product" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="productEOP" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="productModel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="productSOP" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="programName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="plant" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlantEntity" inverseName="products" inverseEntity="PlantEntity" syncable="YES"/>
     </entity>
     <entity name="ResourceCategoryEntity" representedClassName="ResourceCategoryEntity" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -135,13 +145,14 @@
         <attribute name="userID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="PeopleEntity" positionX="45" positionY="351" width="128" height="315"/>
-        <element name="CompanyEntity" positionX="304" positionY="81" width="128" height="225"/>
-        <element name="ResourceCategoryEntity" positionX="90" positionY="-108" width="128" height="105"/>
         <element name="AddressEntity" positionX="-441" positionY="333" width="128" height="255"/>
-        <element name="ResourceEntity" positionX="-81" positionY="-9" width="128" height="285"/>
+        <element name="CompanyEntity" positionX="304" positionY="81" width="128" height="225"/>
         <element name="DepartmentEntity" positionX="-20" positionY="801" width="128" height="150"/>
-        <element name="PlantEntity" positionX="306" positionY="474" width="128" height="300"/>
+        <element name="PeopleEntity" positionX="45" positionY="351" width="128" height="315"/>
+        <element name="PlantEntity" positionX="306" positionY="474" width="128" height="315"/>
+        <element name="ResourceCategoryEntity" positionX="90" positionY="-108" width="128" height="105"/>
+        <element name="ResourceEntity" positionX="-81" positionY="-9" width="128" height="285"/>
         <element name="UserDeviceDetails" positionX="-216" positionY="63" width="128" height="495"/>
+        <element name="ProductEntity" positionX="-243" positionY="36" width="128" height="150"/>
     </elements>
 </model>

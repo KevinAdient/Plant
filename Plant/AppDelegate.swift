@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
         return true
     }
 
@@ -344,6 +345,110 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      return inputString;
      }
      */
+    
+    
+    func fetchThisPlant(plantName:String) -> PlantEntity? {
+        let moc = self.getManagedContext()
+        let plantFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "PlantEntity")
+        let predicateString:String = String(format:"name contains[cd] '\(plantName)'")
+        print("predicate String = \(predicateString)")
+        plantFetchRequest.predicate = NSPredicate(format:predicateString)
+        
+        var theLocatedEntities:[PlantEntity]
+        let emptyProgramEntity:PlantEntity? = nil
+        do {
+            theLocatedEntities = try moc.fetch(plantFetchRequest) as! [PlantEntity]
+            
+        } catch {
+            fatalError("Failed to fetch the programEntity named :\(plantName), error = \(error)")
+        }
+        if(theLocatedEntities.count > 0){
+            return theLocatedEntities[0]
+        }
+        return emptyProgramEntity
+    }
+
+    
+    public func importProducts()->Void {
+        
+        let jsonPlantsName:String = String("ProductInfoJSON")
+        let jsonPlantsPath: String = Bundle.main.path(forResource: jsonPlantsName, ofType: "json")! as String
+        let readData : Data = try! Data(contentsOf: URL(fileURLWithPath: jsonPlantsPath), options:  NSData.ReadingOptions.dataReadingMapped)
+        do {
+            let productArray = try JSONSerialization.jsonObject(with: readData, options: [])
+                as! [AnyObject]
+            print(productArray)
+            for productDict in productArray {
+                
+                let productEntity:ProductEntity = NSEntityDescription.insertNewObject(forEntityName: "ProductEntity", into: self.getManagedContext()) as! ProductEntity
+                
+                let  groupName = productDict["Customer Group"] as! String
+                print("Customer Group: \(groupName)")
+                productEntity.customerGroup = groupName
+                
+                let  programName = productDict["Program Name"] as! String
+                print("Program Name: \(programName)")
+                productEntity.programName = programName
+                
+                let  modelName = productDict["Model"] as! String
+                print("Program Name: \(modelName)")
+                productEntity.productModel = modelName
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "mm-dd-yy" //Your date format
+                
+                let  sopString = productDict["SOP"] as! String
+                let sopDate = dateFormatter.date(from: sopString) as NSDate?
+                if sopDate != nil {
+                    productEntity.productSOP = sopDate!
+                    print("SOP: \(productEntity.productSOP!)")
+                }
+                
+                
+                let  eopString = productDict["EOP"] as! String
+                let eopDate = dateFormatter.date(from: eopString) as NSDate?
+                if (eopDate != nil) {
+                    productEntity.productEOP = eopDate!
+                    print("EOP: \(productEntity.productEOP!)")
+                }
+                
+                
+                let  product = productDict["Product"] as! String
+                print("Product: \(product)")
+                productEntity.product = product
+                
+                let  plantName = productDict["Plant"] as! String
+                print("Plant: \(plantName)")
+                let plantEntity = self.fetchThisPlant(plantName: plantName)
+                if(plantEntity != nil) {
+                    let currentPlant = plantEntity
+                    print("SOP: \(currentPlant?.name)")
+                    productEntity.plant = currentPlant
+                } else {
+                    let plantEntity: PlantEntity = NSEntityDescription.insertNewObject(forEntityName: "PlantEntity", into: self.getManagedContext()) as! PlantEntity
+                    
+                    let  plantName = productDict["Plant"] as! String
+                    print("Plant: \(plantName)")
+                    plantEntity.name = plantName
+                    
+//                    let  country = productDict["Country"] as! String
+//                    print("Plant: \(country)")
+//                    plantEntity.plantAddress?.countryCode = country
+
+                    productEntity.plant = plantEntity
+                }
+            }
+        } catch let error as NSError {
+            print("Failed to load: \(error.localizedDescription)")
+        }
+        
+        print("finished")
+        self.saveContext()
+        
+    }
+    
+    
+    
     public func createResources()->Void {
         if self.fetchedResource().count > 0 {
             return;
@@ -725,9 +830,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         mikesBossEntity.theirAddress = helmAddressEntity1
         mikesBossEntity.theirDepartment = randyDepartmentEntity
         self.importPlants()
+        self.importProducts()
         self.saveContext()
         return
     }
 
+}
+
+extension Data {
+    var string: String {
+        return String(data: self, encoding: .utf8) ?? ""
+    }
 }
 

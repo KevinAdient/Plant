@@ -24,6 +24,8 @@
 		BC39215D1EDDD88700B26369 /* sheryl.haislet.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC3921571EDDD88700B26369 /* sheryl.haislet.jpg */; };
 		BC39215E1EDDD88700B26369 /* shobita.saxena.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC3921581EDDD88700B26369 /* shobita.saxena.jpg */; };
 		BC3921601EDDDC5E00B26369 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC39215F1EDDDC5E00B26369 /* MyCollectionViewCell.swift */; };
+		BCD4AE341EE07404002BE501 /* ProductInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = BCD4AE331EE07404002BE501 /* ProductInfo.json */; };
+		BCD4AE361EE0845A002BE501 /* ProductInfoJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = BCD4AE351EE0845A002BE501 /* ProductInfoJSON.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		BC3921571EDDD88700B26369 /* sheryl.haislet.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sheryl.haislet.jpg; sourceTree = "<group>"; };
 		BC3921581EDDD88700B26369 /* shobita.saxena.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shobita.saxena.jpg; sourceTree = "<group>"; };
 		BC39215F1EDDDC5E00B26369 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		BCD4AE331EE07404002BE501 /* ProductInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProductInfo.json; sourceTree = "<group>"; };
+		BCD4AE351EE0845A002BE501 /* ProductInfoJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProductInfoJSON.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 				BC39213D1EDDD00800B26369 /* LaunchScreen.storyboard */,
 				BC3921401EDDD00800B26369 /* Info.plist */,
 				BC3921481EDDD22100B26369 /* prmgeo.json */,
+				BCD4AE331EE07404002BE501 /* ProductInfo.json */,
+				BCD4AE351EE0845A002BE501 /* ProductInfoJSON.json */,
 				BC3921381EDDD00800B26369 /* Plant.xcdatamodeld */,
 				BC3921501EDDD85300B26369 /* picture */,
 			);
@@ -171,12 +177,14 @@
 				BC39213F1EDDD00800B26369 /* LaunchScreen.storyboard in Resources */,
 				BC39215E1EDDD88700B26369 /* shobita.saxena.jpg in Resources */,
 				BC39215A1EDDD88700B26369 /* mike.chabot.jpg in Resources */,
+				BCD4AE361EE0845A002BE501 /* ProductInfoJSON.json in Resources */,
 				BC39215B1EDDD88700B26369 /* randy.urban.jpg in Resources */,
 				BC3921521EDDD86200B26369 /* bruce.mcdonald.jpg in Resources */,
 				BC3921491EDDD22100B26369 /* prmgeo.json in Resources */,
 				BC39213C1EDDD00800B26369 /* Assets.xcassets in Resources */,
 				BC39215D1EDDD88700B26369 /* sheryl.haislet.jpg in Resources */,
 				BC39215C1EDDD88700B26369 /* sarah.hendrixson.jpg in Resources */,
+				BCD4AE341EE07404002BE501 /* ProductInfo.json in Resources */,
 				BC3921591EDDD88700B26369 /* julie.ragland.jpg in Resources */,
 				BC3921371EDDD00800B26369 /* Main.storyboard in Resources */,
 			);
