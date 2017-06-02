@@ -536,9 +536,9 @@ extension ProductListViewController: UISearchBarDelegate {
         
         filteredProducts = products.filter({ (searchDate >= $0.productSOP! as Date) && ($0.productEOP! as Date >= searchDate) })
         print(filteredProducts)
-//        if (filteredProducts.count == 0) {
-//            filteredProducts = products
-//        }
+        if (searchText == "") {
+            filteredProducts = products
+        }
         tableView.reloadData()
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
