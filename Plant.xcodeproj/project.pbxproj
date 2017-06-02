@@ -26,6 +26,7 @@
 		BC3921601EDDDC5E00B26369 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC39215F1EDDDC5E00B26369 /* MyCollectionViewCell.swift */; };
 		BCD4AE341EE07404002BE501 /* ProductInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = BCD4AE331EE07404002BE501 /* ProductInfo.json */; };
 		BCD4AE361EE0845A002BE501 /* ProductInfoJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = BCD4AE351EE0845A002BE501 /* ProductInfoJSON.json */; };
+		BCD4AE381EE1C339002BE501 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4AE371EE1C339002BE501 /* ProductListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		BC39215F1EDDDC5E00B26369 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		BCD4AE331EE07404002BE501 /* ProductInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProductInfo.json; sourceTree = "<group>"; };
 		BCD4AE351EE0845A002BE501 /* ProductInfoJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProductInfoJSON.json; sourceTree = "<group>"; };
+		BCD4AE371EE1C339002BE501 /* ProductListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				BC3921461EDDD0FA00B26369 /* PlantViewController.swift */,
 				BC39214C1EDDD63C00B26369 /* PlantTableViewCell.swift */,
 				BC39215F1EDDDC5E00B26369 /* MyCollectionViewCell.swift */,
+				BCD4AE371EE1C339002BE501 /* ProductListViewController.swift */,
 				BC3921351EDDD00800B26369 /* Main.storyboard */,
 				BC39213B1EDDD00800B26369 /* Assets.xcassets */,
 				BC39213D1EDDD00800B26369 /* LaunchScreen.storyboard */,
@@ -199,6 +202,7 @@
 			files = (
 				BC39213A1EDDD00800B26369 /* Plant.xcdatamodeld in Sources */,
 				BC39214D1EDDD63C00B26369 /* PlantTableViewCell.swift in Sources */,
+				BCD4AE381EE1C339002BE501 /* ProductListViewController.swift in Sources */,
 				BC3921601EDDDC5E00B26369 /* MyCollectionViewCell.swift in Sources */,
 				BC3921321EDDD00800B26369 /* AppDelegate.swift in Sources */,
 				BC39214B1EDDD25000B26369 /* CoreDataManager.swift in Sources */,

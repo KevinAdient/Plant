@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import MapKit
 
-class PlantViewController: UIViewController, UITextFieldDelegate {
+class PlantViewController: UIViewController, DataEnteredDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -119,6 +119,37 @@ class PlantViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    //Mark: DataEnteredDelegate
+    func synccellColorArray(info: Array<Bool>) {
+        self.cellColorArray = info
+        
+        for i in 0...26 {
+            if(cellColorArray[i] == true){
+                collectionView.scrollToItem(at: IndexPath.init(row: i, section: 0), at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+                var predicate = NSPredicate()
+                var myIndexPath = IndexPath.init(row: i, section: 0)
+                if (myIndexPath.row != 26) {
+                    predicate = NSPredicate(format: "(type == 'plant' || type == 'building') && name BEGINSWITH[cd] %@",myArray[myIndexPath.row])
+                } else {
+                    predicate = NSPredicate(format: "(type == 'plant' || type == 'building') && (name BEGINSWITH[cd] '7')")
+                }
+                
+                self.fetchedResultsController.fetchRequest.predicate = predicate
+                do {
+                    try self.fetchedResultsController.performFetch()
+                } catch {
+                    let fetchError = error as NSError
+                    print("Unable to Perform Fetch Request")
+                    print("\(fetchError), \(fetchError.localizedDescription)")
+                }
+                
+                tableView.reloadData()
+                break
+            }
+        }
+        collectionView.reloadData()
     }
 
     
@@ -381,12 +412,19 @@ extension PlantViewController: UITableViewDelegate {
         //select action
         searchBar.resignFirstResponder()
         let currentPlace = fetchedResultsController.object(at: indexPath)
-        
+    
         if (currentPlace.type == "plant") {
-            let lat = currentPlace.plant?.plantAddress?.gpsLatitude
-            let long = currentPlace.plant?.plantAddress?.gpsLongitude
-            let placeStr = (currentPlace.plant?.plantAddress?.city!)! + " " + (currentPlace.plant?.plantAddress?.streetName1!)! + " " + (currentPlace.plant?.plantAddress?.countryCode)!
-            openMapForPlace(lat: lat!, long: long!, placeName: placeStr)
+//            let lat = currentPlace.plant?.plantAddress?.gpsLatitude
+//            let long = currentPlace.plant?.plantAddress?.gpsLongitude
+//            let placeStr = (currentPlace.plant?.plantAddress?.city!)! + " " + (currentPlace.plant?.plantAddress?.streetName1!)! + " " + (currentPlace.plant?.plantAddress?.countryCode)!
+//            openMapForPlace(lat: lat!, long: long!, placeName: placeStr)
+            let plVC = self.storyboard?.instantiateViewController(withIdentifier: "ProductListViewController") as! ProductListViewController
+            plVC.currentPlant = currentPlace.plant!
+            plVC.cellColorArray = cellColorArray
+            plVC.delegate = self
+            
+            self.navigationController?.pushViewController(plVC, animated: true)
+            
         } else {
             let alert = UIAlertController(title: "Alert", message: "No GPS information current", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "ok", style: UIAlertActionStyle.default, handler: nil))
