@@ -69,13 +69,18 @@ class ProductListViewController: UIViewController {
         let flagName = findCountryFlagName(inputStr: countryNameStr!)
         countryFlagImg.image = UIImage(named: flagName)
         
+        self.navigationController?.isNavigationBarHidden=false
+        self.navigationController?.navigationItem.hidesBackButton = false
+       
+
+        
         collectionView.allowsMultipleSelection = false
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
         for i in 0...26 {
             if(cellColorArray[i] == true){
-                
                 collectionView.scrollToItem(at: IndexPath.init(row: i, section: 0), at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
                 collectionView.reloadData()
                 break
@@ -135,6 +140,7 @@ class ProductListViewController: UIViewController {
             popUpView.addSubview(greenImgView)
             titleLbl = UILabel(frame: CGRect(x: 70, y: 15, width: popupViewWidth - 100, height: 30))
             titleLbl.text = selectProduct.programName
+            titleLbl.numberOfLines = 0
             titleLbl.textAlignment = .center
             popUpView.addSubview(titleLbl)
             let titleLine = UIImageView(frame: CGRect(x: 0, y: 59, width: popupViewWidth, height: 1))
@@ -435,7 +441,7 @@ extension ProductListViewController: UITableViewDataSource {
         cell.textLabel?.text = myId.appending(" ").appending(String(startYear)).appending(" - ").appending(String(endYear))
         cell.backgroundColor = UIColor.clear
         cell.textLabel?.textColor = UIColor.black
-        cell.textLabel?.font = UIFont(name: "Geneva", size: 15.0)
+        cell.textLabel?.font = UIFont(name: "Geneva", size: 13.0)
         
         return cell
     }
