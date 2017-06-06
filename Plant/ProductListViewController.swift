@@ -126,7 +126,7 @@ class ProductListViewController: UIViewController {
             
             // any other objects should be tied to this view as superView
             // for example adding this okayButton
-            let okayButton = UIButton(frame: CGRect(x:popUpView.frame.width-45 , y: 15, width: 30, height: 30))
+            let okayButton = UIButton(frame: CGRect(x:popUpView.frame.width-45 , y: 15, width: 25, height: 25))
             okayButton.setImage(UIImage(named: "Close"), for: .normal)
             
             // here we are adding the button its superView
@@ -433,8 +433,8 @@ extension ProductListViewController: UITableViewDataSource {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM-dd-yyyy"
         let calendar = Calendar.current
-        let startYear = calendar.component(.year, from: product.productSOP as! Date)
-        let endYear = calendar.component(.year, from: product.productEOP as! Date)
+        let startYear = calendar.component(.year, from: product.productSOP! as Date)
+        let endYear = calendar.component(.year, from: product.productEOP! as Date)
         
         let myId = product.programName!
         
