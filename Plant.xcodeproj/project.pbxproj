@@ -27,6 +27,12 @@
 		BCD4AE341EE07404002BE501 /* ProductInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = BCD4AE331EE07404002BE501 /* ProductInfo.json */; };
 		BCD4AE361EE0845A002BE501 /* ProductInfoJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = BCD4AE351EE0845A002BE501 /* ProductInfoJSON.json */; };
 		BCD4AE381EE1C339002BE501 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4AE371EE1C339002BE501 /* ProductListViewController.swift */; };
+		BCEFB8D91EE6ECBE0095D766 /* Domus-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BCEFB8D31EE6EC820095D766 /* Domus-Bold.otf */; };
+		BCEFB8DA1EE6ECC20095D766 /* Domus-Extralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = BCEFB8D41EE6EC820095D766 /* Domus-Extralight.otf */; };
+		BCEFB8DB1EE6ECC80095D766 /* Domus-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BCEFB8D51EE6EC820095D766 /* Domus-Light.otf */; };
+		BCEFB8DC1EE6ECCC0095D766 /* Domus-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BCEFB8D61EE6EC820095D766 /* Domus-Regular.otf */; };
+		BCEFB8DD1EE6ECCF0095D766 /* Domus-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BCEFB8D71EE6EC820095D766 /* Domus-Semibold.otf */; };
+		BCEFB8DE1EE6ECD20095D766 /* Domus-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = BCEFB8D81EE6EC820095D766 /* Domus-Ultralight.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +58,12 @@
 		BCD4AE331EE07404002BE501 /* ProductInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProductInfo.json; sourceTree = "<group>"; };
 		BCD4AE351EE0845A002BE501 /* ProductInfoJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProductInfoJSON.json; sourceTree = "<group>"; };
 		BCD4AE371EE1C339002BE501 /* ProductListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
+		BCEFB8D31EE6EC820095D766 /* Domus-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Domus-Bold.otf"; sourceTree = "<group>"; };
+		BCEFB8D41EE6EC820095D766 /* Domus-Extralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Domus-Extralight.otf"; sourceTree = "<group>"; };
+		BCEFB8D51EE6EC820095D766 /* Domus-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Domus-Light.otf"; sourceTree = "<group>"; };
+		BCEFB8D61EE6EC820095D766 /* Domus-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Domus-Regular.otf"; sourceTree = "<group>"; };
+		BCEFB8D71EE6EC820095D766 /* Domus-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Domus-Semibold.otf"; sourceTree = "<group>"; };
+		BCEFB8D81EE6EC820095D766 /* Domus-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Domus-Ultralight.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +96,7 @@
 		BC3921301EDDD00800B26369 /* Plant */ = {
 			isa = PBXGroup;
 			children = (
+				BCEFB8D21EE6EC740095D766 /* Font */,
 				BC3921311EDDD00800B26369 /* AppDelegate.swift */,
 				BC39214A1EDDD25000B26369 /* CoreDataManager.swift */,
 				BC3921461EDDD0FA00B26369 /* PlantViewController.swift */,
@@ -115,6 +128,19 @@
 				BC3921511EDDD86200B26369 /* bruce.mcdonald.jpg */,
 			);
 			name = picture;
+			sourceTree = "<group>";
+		};
+		BCEFB8D21EE6EC740095D766 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				BCEFB8D31EE6EC820095D766 /* Domus-Bold.otf */,
+				BCEFB8D41EE6EC820095D766 /* Domus-Extralight.otf */,
+				BCEFB8D51EE6EC820095D766 /* Domus-Light.otf */,
+				BCEFB8D61EE6EC820095D766 /* Domus-Regular.otf */,
+				BCEFB8D71EE6EC820095D766 /* Domus-Semibold.otf */,
+				BCEFB8D81EE6EC820095D766 /* Domus-Ultralight.otf */,
+			);
+			name = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,9 +204,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC39213F1EDDD00800B26369 /* LaunchScreen.storyboard in Resources */,
+				BCEFB8D91EE6ECBE0095D766 /* Domus-Bold.otf in Resources */,
 				BC39215E1EDDD88700B26369 /* shobita.saxena.jpg in Resources */,
+				BCEFB8DC1EE6ECCC0095D766 /* Domus-Regular.otf in Resources */,
+				BCEFB8DB1EE6ECC80095D766 /* Domus-Light.otf in Resources */,
 				BC39215A1EDDD88700B26369 /* mike.chabot.jpg in Resources */,
 				BCD4AE361EE0845A002BE501 /* ProductInfoJSON.json in Resources */,
+				BCEFB8DE1EE6ECD20095D766 /* Domus-Ultralight.otf in Resources */,
+				BCEFB8DD1EE6ECCF0095D766 /* Domus-Semibold.otf in Resources */,
 				BC39215B1EDDD88700B26369 /* randy.urban.jpg in Resources */,
 				BC3921521EDDD86200B26369 /* bruce.mcdonald.jpg in Resources */,
 				BC3921491EDDD22100B26369 /* prmgeo.json in Resources */,
@@ -190,6 +221,7 @@
 				BCD4AE341EE07404002BE501 /* ProductInfo.json in Resources */,
 				BC3921591EDDD88700B26369 /* julie.ragland.jpg in Resources */,
 				BC3921371EDDD00800B26369 /* Main.storyboard in Resources */,
+				BCEFB8DA1EE6ECC20095D766 /* Domus-Extralight.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

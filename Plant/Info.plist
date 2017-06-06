@@ -41,5 +41,14 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>UIAppFonts</key>
+    <array>
+        <string>Domus-Bold.otf</string>
+        <string>Domus-Extralight.otf</string>
+        <string>Domus-Light.otf</string>
+        <string>Domus-Regular.otf</string>
+        <string>Domus-Semibold.otf</string>
+        <string>Domus-Ultralight.otf</string>
+    </array>
 </dict>
 </plist>
