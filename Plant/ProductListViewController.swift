@@ -89,6 +89,11 @@ class ProductListViewController: UIViewController {
         
     }
     
+    @IBAction func backToPrevBtnClicked(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
     //Mark - set up pop up view
     func loadCustomViewIntoController()
     {

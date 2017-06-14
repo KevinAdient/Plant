@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16G12b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ipb-z3-Xs2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G12b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ipb-z3-Xs2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -286,6 +286,15 @@
                                     <outlet property="delegate" destination="4W3-sM-CZd" id="96u-Vp-DMz"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PlK-wF-2lj">
+                                <rect key="frame" x="10" y="69" width="355" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="8gD-eH-z7h"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="backToPrevBtnClicked:" destination="4W3-sM-CZd" eventType="touchUpInside" id="8Jz-0u-OIC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -298,8 +307,11 @@
                             <constraint firstAttribute="trailing" secondItem="ZMG-6X-7td" secondAttribute="trailing" id="Kyt-dA-0A0"/>
                             <constraint firstItem="v8I-8X-3Gl" firstAttribute="leading" secondItem="arW-iK-o9V" secondAttribute="leading" constant="20" id="OAz-WJ-6J3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gHs-3v-gfV" secondAttribute="trailing" constant="20" id="Q7v-8U-861"/>
+                            <constraint firstItem="PlK-wF-2lj" firstAttribute="leading" secondItem="arW-iK-o9V" secondAttribute="leading" constant="10" id="WlN-PX-xkN"/>
                             <constraint firstItem="GQD-4t-oji" firstAttribute="top" secondItem="zSU-Fj-vXm" secondAttribute="bottom" id="YHw-kr-Eg7"/>
+                            <constraint firstItem="PlK-wF-2lj" firstAttribute="top" secondItem="GQD-4t-oji" secondAttribute="bottom" constant="5" id="auJ-p4-mZl"/>
                             <constraint firstAttribute="trailing" secondItem="GQD-4t-oji" secondAttribute="trailing" id="dUn-Ti-a53"/>
+                            <constraint firstAttribute="trailing" secondItem="PlK-wF-2lj" secondAttribute="trailing" constant="10" id="fYS-At-YQ5"/>
                             <constraint firstAttribute="trailing" secondItem="1Ig-JZ-W1H" secondAttribute="trailing" id="hiL-Bu-RMH"/>
                             <constraint firstAttribute="trailing" secondItem="QnR-jy-iXq" secondAttribute="trailing" id="mdU-aC-Iye"/>
                             <constraint firstItem="QnR-jy-iXq" firstAttribute="top" secondItem="ZMG-6X-7td" secondAttribute="bottom" id="nhG-kd-UEc"/>
@@ -326,7 +338,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ipb-z3-Xs2" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="618-qV-otY">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="618-qV-otY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
